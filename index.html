@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayomosiah Odumosu</title>
+<meta name="description" content="Ayomosiah Odumosu — CS student at Delaware State University. NSF Intern, AI Hackathon organizer, incoming CAB Business Manager.">
+<meta property="og:title" content="Ayomosiah Odumosu">
+<meta property="og:description" content="CS student at Delaware State University building at the intersection of technology, community, and leadership.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #faf7f2;
+    --cream-2: #f3ede3;
+    --cream-3: #e8dfd0;
+    --ink: #1a1612;
+    --ink-2: #3d3530;
+    --ink-3: #6b5f57;
+    --ink-4: #9e918a;
+    --amber: #c8762a;
+    --amber-light: #e8a84a;
+    --amber-pale: #fdf0e0;
+    --teal: #2a6b6b;
+    --teal-pale: #e0f0f0;
+    --border: rgba(26,22,18,0.1);
+    --border-strong: rgba(26,22,18,0.2);
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250,247,242,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0 2.5rem;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 15px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    color: var(--ink-3);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--amber); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 56px;
+  }
+
+  .hero-left {
+    padding: 6rem 3rem 4rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 0.5px solid var(--border);
+  }
+
+  .hero-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--amber);
+  }
+
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 6vw, 76px);
+    font-weight: 500;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-name span {
+    display: block;
+    color: var(--ink-3);
+    font-style: italic;
+  }
+
+  .hero-bio {
+    font-size: 16px;
+    color: var(--ink-3);
+    max-width: 400px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .pill {
+    font-size: 12px;
+    font-family: var(--font-mono);
+    padding: 5px 14px;
+    border-radius: 100px;
+    border: 0.5px solid var(--border-strong);
+    color: var(--ink-3);
+    background: transparent;
+    letter-spacing: 0.02em;
+  }
+
+  .pill.amber {
+    border-color: var(--amber);
+    color: var(--amber);
+    background: var(--amber-pale);
+  }
+
+  .pill.teal {
+    border-color: var(--teal);
+    color: var(--teal);
+    background: var(--teal-pale);
+  }
+
+  .hero-right {
+    padding: 6rem 4rem 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1px;
+    background: var(--cream-2);
+  }
+
+  .hero-stat {
+    padding: 1.5rem 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .hero-stat:first-child { border-top: 0.5px solid var(--border); }
+
+  .hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+
+  .hero-stat-label {
+    font-size: 13px;
+    color: var(--ink-4);
+    margin-top: 2px;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 6rem 5rem;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--amber);
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--border);
+  }
+
+  /* ABOUT */
+  #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  #about .about-text { }
+
+  .about-portrait {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: var(--cream-3);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .about-portrait-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-4);
+    letter-spacing: 0.1em;
+  }
+
+  .about-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-h {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--ink);
+  }
+
+  .about-p {
+    font-size: 15px;
+    color: var(--ink-3);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  /* CURRENTLY */
+  #currently {
+    background: var(--cream-2);
+  }
+
+  .currently-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .currently-item {
+    padding: 1.5rem;
+    background: var(--cream);
+    border-radius: 6px;
+    border: 0.5px solid var(--border);
+  }
+
+  .currently-item-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--ink-4);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .currently-item-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  .currently-item-sub {
+    font-size: 13px;
+    color: var(--ink-3);
+    line-height: 1.6;
+  }
+
+  /* EXPERIENCE */
+  #experience {}
+
+  .exp-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+  }
+
+  .exp-item {
+    display: contents;
+  }
+
+  .exp-meta {
+    padding: 2rem 2rem 2rem 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .exp-body {
+    padding: 2rem 0 2rem 2rem;
+    border-bottom: 0.5px solid var(--border);
+    border-left: 0.5px solid var(--border);
+  }
+
+  .exp-year {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-4);
+    letter-spacing: 0.08em;
+  }
+
+  .exp-org {
+    font-size: 13px;
+    color: var(--ink-3);
+    margin-top: 4px;
+  }
+
+  .exp-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+
+  .exp-desc {
+    font-size: 14px;
+    color: var(--ink-3);
+    line-height: 1.75;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    margin-top: 0.75rem;
+  }
+
+  .exp-bullets li {
+    font-size: 14px;
+    color: var(--ink-3);
+    line-height: 1.7;
+    padding-left: 1rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+  }
+
+  .exp-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--amber);
+  }
+
+  /* RECOGNITION */
+  #recognition {
+    background: var(--ink);
+    color: var(--cream);
+  }
+
+  #recognition .section-label {
+    color: var(--amber-light);
+  }
+
+  #recognition .section-label::after {
+    background: rgba(250,247,242,0.15);
+  }
+
+  .recog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(250,247,242,0.08);
+    border: 0.5px solid rgba(250,247,242,0.08);
+  }
+
+  .recog-card {
+    padding: 2rem 2.5rem;
+    background: var(--ink);
+    transition: background 0.2s;
+  }
+
+  .recog-card:hover { background: var(--ink-2); }
+
+  .recog-card.feature {
+    background: #231e19;
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .recog-year {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--amber-light);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .recog-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+    line-height: 1.25;
+  }
+
+  .recog-sub {
+    font-size: 13px;
+    color: var(--ink-4);
+    line-height: 1.65;
+  }
+
+  .recog-feature-desc {
+    font-size: 14px;
+    color: rgba(250,247,242,0.6);
+    line-height: 1.75;
+  }
+
+  .recog-amount {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--amber-light);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  /* GALLERY */
+  #gallery {
+    padding: 0;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .gallery-header {
+    padding: 3rem 5rem 2rem;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 300px 300px;
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .gallery-item {
+    background: var(--cream-3);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-item.g1 {
+    grid-row: span 2;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-item:hover img { transform: scale(1.03); }
+
+  .gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .gallery-placeholder-num {
+    font-family: var(--font-display);
+    font-size: 48px;
+    color: var(--cream-3);
+    line-height: 1;
+  }
+
+  .gallery-placeholder-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--ink-4);
+    text-transform: uppercase;
+  }
+
+  .gallery-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(transparent, rgba(26,22,18,0.7));
+    font-size: 12px;
+    color: rgba(250,247,242,0.9);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .gallery-item:hover .gallery-caption { opacity: 1; }
+
+  /* ORGS */
+  #orgs {
+    background: var(--cream-2);
+  }
+
+  .orgs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .org-tag {
+    font-size: 13px;
+    padding: 8px 18px;
+    border: 0.5px solid var(--border-strong);
+    border-radius: 4px;
+    color: var(--ink-2);
+    background: var(--cream);
+  }
+
+  /* OPEN TO */
+  #open-to {}
+
+  .open-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .open-card {
+    padding: 1.5rem;
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    background: var(--cream);
+  }
+
+  .open-card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--amber-pale);
+    border: 0.5px solid var(--amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 14px;
+  }
+
+  .open-card-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+  }
+
+  .open-card-sub {
+    font-size: 12px;
+    color: var(--ink-4);
+    line-height: 1.6;
+  }
+
+  /* CONTACT */
+  #contact {
+    background: var(--cream-2);
+  }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-h {
+    font-family: var(--font-display);
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  .contact-sub {
+    font-size: 15px;
+    color: var(--ink-3);
+    line-height: 1.75;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 2rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 0;
+    border-bottom: 0.5px solid var(--border);
+    text-decoration: none;
+    color: var(--ink);
+    transition: color 0.2s;
+    font-size: 15px;
+  }
+
+  .contact-link:first-child { border-top: 0.5px solid var(--border); }
+  .contact-link:hover { color: var(--amber); }
+
+  .contact-link-arrow {
+    font-size: 18px;
+    transition: transform 0.2s;
+  }
+
+  .contact-link:hover .contact-link-arrow { transform: translate(3px, -3px); }
+
+  .contact-email {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--amber);
+    word-break: break-all;
+    margin-bottom: 1.5rem;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 5rem;
+    border-top: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-name {
+    font-family: var(--font-display);
+    font-size: 14px;
+    color: var(--ink-4);
+  }
+
+  .footer-note {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-4);
+    letter-spacing: 0.06em;
+  }
+
+  /* REVEAL ANIMATION */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 4rem 2rem 2rem; border-right: none; border-bottom: 0.5px solid var(--border); }
+    .hero-right { padding: 2rem; }
+
+    section { padding: 4rem 2rem; }
+    .section-label { margin-bottom: 2rem; }
+
+    #about { grid-template-columns: 1fr; gap: 2rem; }
+    .currently-grid { grid-template-columns: 1fr; }
+    .exp-grid { grid-template-columns: 1fr; }
+    .exp-meta { padding: 1.5rem 0 0.5rem; border-bottom: none; }
+    .exp-body { padding: 0 0 1.5rem; border-left: none; border-bottom: 0.5px solid var(--border); }
+
+    .recog-grid { grid-template-columns: 1fr; }
+    .recog-card.feature { grid-column: span 1; grid-template-columns: 1fr; }
+
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-item.g1 { grid-row: span 1; }
+
+    .open-grid { grid-template-columns: 1fr 1fr; }
+    .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Ayomosiah Odumosu</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#recognition">Recognition</a></li>
+    <li><a href="#gallery">In The Room</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-label">Portfolio</div>
+    <h1 class="hero-name">
+      Ayomosiah<br>
+      <span>Odumosu</span>
+    </h1>
+    <p class="hero-bio">
+      CS student at Delaware State University building at the intersection of technology, community, and leadership. I do not wait for rooms to be built. I build them.
+    </p>
+    <div class="hero-pills">
+      <span class="pill amber">NSF Intern</span>
+      <span class="pill teal">CAB Business Manager '26</span>
+      <span class="pill">Delaware State University</span>
+      <span class="pill">NSBE</span>
+      <span class="pill">1890 Scholar</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat reveal">
+      <div class="hero-stat-num">$20,000</div>
+      <div class="hero-stat-label">Secured from Barclays for DSU's first AI Hackathon</div>
+    </div>
+    <div class="hero-stat reveal">
+      <div class="hero-stat-num">$100k+</div>
+      <div class="hero-stat-label">Budget incoming as CAB Business Manager</div>
+    </div>
+    <div class="hero-stat reveal">
+      <div class="hero-stat-num">20,000+</div>
+      <div class="hero-stat-label">Organic views driven at Delaware Black Chamber of Commerce</div>
+    </div>
+    <div class="hero-stat reveal">
+      <div class="hero-stat-num">First</div>
+      <div class="hero-stat-label">AI Hackathon in DSU history, organized and led by Ayo</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-text">
+    <div class="section-label">About</div>
+    <h2 class="about-h reveal">Technology is only as powerful as the people it lifts.</h2>
+    <p class="about-p reveal">
+      I am a Computer Science student at Delaware State University with a minor in Finance, operating at the rare crossroads of code, community, and capital. Whether I am writing Python, analyzing data for the Black Male Initiative, or negotiating sponsorship packages, my work is always pointed in the same direction: creating access where it did not exist before.
+    </p>
+    <p class="about-p reveal">
+      As an NSF Intern, I work at the frontier of federally supported research and science. On campus, I organized DSU's first ever AI Hackathon, secured $20,000 in sponsorship from Barclays, and built the full logistics framework from the ground up. That event is coming next semester and it is going to be worth showing up for.
+    </p>
+    <p class="about-p reveal">
+      Next year I step into the role of Campus Activities Board Business Manager, where I will oversee a $100,000+ budget and curate events that genuinely move the student body. I believe in doing things that matter at scale, and I am just getting started.
+    </p>
+  </div>
+  <div class="about-portrait reveal" aria-label="Portrait photo placeholder">
+    <!-- Replace this div with: <img src="images/portrait.jpg" alt="Ayomosiah Odumosu"> -->
+    <div class="about-portrait-placeholder">portrait.jpg</div>
+  </div>
+</section>
+
+<!-- CURRENTLY -->
+<section id="currently">
+  <div class="section-label">Currently</div>
+  <div class="currently-grid">
+    <div class="currently-item reveal">
+      <div class="currently-item-tag">Building</div>
+      <div class="currently-item-title">DSU's First AI Hackathon</div>
+      <div class="currently-item-sub">Organizing, funding secured. Launching next semester. Participants will compete for cash prizes with access to industry mentors.</div>
+    </div>
+    <div class="currently-item reveal">
+      <div class="currently-item-tag">Working</div>
+      <div class="currently-item-title">NSF Internship</div>
+      <div class="currently-item-sub">Embedded in federally supported research. Expanding what I know about science, systems, and what it means to build for the long term.</div>
+    </div>
+    <div class="currently-item reveal">
+      <div class="currently-item-tag">Studying</div>
+      <div class="currently-item-title">CS + Finance at DSU</div>
+      <div class="currently-item-sub">Coursework in programming, computational thinking, and business. Also grinding toward Alteryx, UI/UX, and Google BI certifications.</div>
+    </div>
+    <div class="currently-item reveal">
+      <div class="currently-item-tag">Planning</div>
+      <div class="currently-item-title">NSBE Danger Zone Region</div>
+      <div class="currently-item-sub">Serving on the regional planning committee for the National Society of Black Engineers. Connecting engineers across the region.</div>
+    </div>
+    <div class="currently-item reveal">
+      <div class="currently-item-tag">Incoming</div>
+      <div class="currently-item-title">CAB Business Manager</div>
+      <div class="currently-item-sub">Taking over management of a $100k+ campus events budget. The goal: events that actually bring people together.</div>
+    </div>
+    <div class="currently-item reveal">
+      <div class="currently-item-tag">Analyzing</div>
+      <div class="currently-item-title">Black Male Initiative</div>
+      <div class="currently-item-sub">Using data visualization and custom tracking systems to tell the story of BMI's impact and open funding pathways for the org.</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <div class="exp-grid">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-year">Dec 2024 – Present</div>
+        <div class="exp-org">Delaware State University</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-title">AI Hackathon Organizer</div>
+        <ul class="exp-bullets">
+          <li>Secured $20,000 in sponsorship from Barclays to fund DSU's first AI Hackathon in university history.</li>
+          <li>Negotiated multi-tier sponsorship packages aligning corporate goals with event branding for long-term partnership viability.</li>
+          <li>Built the full logistics framework: student participation, venue coordination, cash prizes, and technical infrastructure.</li>
+          <li>Onboarded industry partners providing participants with exclusive mentorship and professional access.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-year">Oct 2024 – Present</div>
+        <div class="exp-org">Black Male Initiative, DSU</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-title">Data Analyst</div>
+        <ul class="exp-bullets">
+          <li>Produced detailed reports and visualizations demonstrating organizational impact to university partners and potential sponsors.</li>
+          <li>Developed new data-tracking systems to measure student participation with improved accuracy.</li>
+          <li>Designed and implemented engagement analysis methods that informed planning and decision-making.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-year">Feb – Jul 2025</div>
+        <div class="exp-org">Delaware Black Chamber of Commerce</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-title">Social Media Intern</div>
+        <ul class="exp-bullets">
+          <li>Spearheaded end-to-end content strategy and creative direction for multi-platform campaigns, driving measurable growth in brand authority.</li>
+          <li>Managed a high-impact digital content pipeline that generated 20,000+ organic views and scaled audience engagement.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-year">NSF</div>
+        <div class="exp-org">National Science Foundation</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-title">NSF Intern</div>
+        <ul class="exp-bullets">
+          <li>Working within a federally supported research framework at the National Science Foundation.</li>
+          <li>Gaining hands-on exposure to STEM research at a national scale.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RECOGNITION -->
+<section id="recognition">
+  <div class="section-label">Recognition</div>
+  <div class="recog-grid">
+
+    <div class="recog-card feature">
+      <div>
+        <div class="recog-year">2025 — Landmark Achievement</div>
+        <div class="recog-title">Barclays $20,000 Sponsorship</div>
+        <div class="recog-feature-desc">
+          As the sole organizer of DSU's first AI Hackathon, Ayo secured $20,000 in corporate sponsorship from Barclays, funding cash prizes, mentorship access, and the full event infrastructure. The hackathon launches next semester.
+        </div>
+      </div>
+      <div>
+        <div class="recog-amount">$20k</div>
+        <div class="recog-sub">Secured from Barclays. First AI Hackathon in DSU history.</div>
+      </div>
+    </div>
+
+    <div class="recog-card">
+      <div class="recog-year">2025</div>
+      <div class="recog-title">Neuberger Stock Pitch</div>
+      <div class="recog-sub">Winner. Competed and placed first in the Neuberger Berman Stock Pitch competition.</div>
+    </div>
+
+    <div class="recog-card">
+      <div class="recog-year">2025</div>
+      <div class="recog-title">Stock Pitch Challenge Runner Up</div>
+      <div class="recog-sub">Runner Up. Awarded $1,200 for placing second in the Stock Pitch Challenge.</div>
+    </div>
+
+    <div class="recog-card">
+      <div class="recog-year">2025</div>
+      <div class="recog-title">CURE Pitch Competition</div>
+      <div class="recog-sub">Runner Up. Awarded $1,800 for placing second in the CURE Pitch Competition.</div>
+    </div>
+
+    <div class="recog-card">
+      <div class="recog-year">Ongoing</div>
+      <div class="recog-title">1890 Scholar</div>
+      <div class="recog-sub">Recognized through the 1890 Scholars program for academic achievement and leadership potential.</div>
+    </div>
+
+    <div class="recog-card">
+      <div class="recog-year">2026</div>
+      <div class="recog-title">DevCon Scholar</div>
+      <div class="recog-sub">Selected as a DevCon Scholar participant for 2026, recognized among emerging tech leaders.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-header">
+    <div class="section-label">In The Room</div>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item g1">
+      <!-- Replace with: <img src="images/event-01.jpg" alt="[Event name]"> -->
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-num">01</div>
+        <div class="gallery-placeholder-label">event-01.jpg</div>
+      </div>
+      <div class="gallery-caption">HBCU AI Summit</div>
+    </div>
+    <div class="gallery-item">
+      <!-- Replace with: <img src="images/event-02.jpg" alt="[Event name]"> -->
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-num">02</div>
+        <div class="gallery-placeholder-label">event-02.jpg</div>
+      </div>
+      <div class="gallery-caption">Innovation Day</div>
+    </div>
+    <div class="gallery-item">
+      <!-- Replace with: <img src="images/event-03.jpg" alt="[Event name]"> -->
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-num">03</div>
+        <div class="gallery-placeholder-label">event-03.jpg</div>
+      </div>
+      <div class="gallery-caption">DSU Fintech Panel</div>
+    </div>
+    <div class="gallery-item">
+      <!-- Replace with: <img src="images/event-04.jpg" alt="[Event name]"> -->
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-num">04</div>
+        <div class="gallery-placeholder-label">event-04.jpg</div>
+      </div>
+      <div class="gallery-caption">NSBE Regional</div>
+    </div>
+  </div>
+</section>
+
+<!-- ORGS -->
+<section id="orgs">
+  <div class="section-label">Organizations</div>
+  <div class="orgs-list">
+    <span class="org-tag">National Society of Black Engineers (NSBE)</span>
+    <span class="org-tag">NSBE Danger Zone Regional Planning Committee</span>
+    <span class="org-tag">CAST Ambassador</span>
+    <span class="org-tag">DSU Investment Club</span>
+    <span class="org-tag">The GodBrothers at DSU</span>
+    <span class="org-tag">Black Male Initiative</span>
+    <span class="org-tag">Innovation Day Planning Committee</span>
+    <span class="org-tag">HBCU AI Summit Planning Committee</span>
+    <span class="org-tag">NSBE On-Campus Senator</span>
+  </div>
+</section>
+
+<!-- OPEN TO -->
+<section id="open-to">
+  <div class="section-label">Open To</div>
+  <div class="open-grid">
+    <div class="open-card reveal">
+      <div class="open-card-icon">R</div>
+      <div class="open-card-title">Research Opportunities</div>
+      <div class="open-card-sub">CS, data, or STEM-adjacent research. Especially interested in applied work with real community impact.</div>
+    </div>
+    <div class="open-card reveal">
+      <div class="open-card-icon">I</div>
+      <div class="open-card-title">Internships</div>
+      <div class="open-card-sub">Tech, finance, data analytics, or community-focused organizations. Summer and part-time considered.</div>
+    </div>
+    <div class="open-card reveal">
+      <div class="open-card-icon">S</div>
+      <div class="open-card-title">Speaking and Panels</div>
+      <div class="open-card-sub">HBCU tech, student entrepreneurship, AI, and community building. Happy to share the journey.</div>
+    </div>
+    <div class="open-card reveal">
+      <div class="open-card-icon">C</div>
+      <div class="open-card-title">Collaborations</div>
+      <div class="open-card-sub">Event organizing, data projects, or building something new with people who move with purpose.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-label">Contact</div>
+      <h2 class="contact-h reveal">Let's build something worth talking about.</h2>
+      <p class="contact-sub reveal">Whether you have an opportunity, a question, or just want to connect — reach out. I respond.</p>
+      <div class="contact-email reveal">amodumosu25@students.desu.edu</div>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/ayomosiah-odumosu-46ba96344/" target="_blank" rel="noopener" class="contact-link">
+          <span>LinkedIn</span>
+          <span class="contact-link-arrow">↗</span>
+        </a>
+        <a href="https://github.com/acedoescs" target="_blank" rel="noopener" class="contact-link">
+          <span>GitHub</span>
+          <span class="contact-link-arrow">↗</span>
+        </a>
+        <a href="resume.pdf" target="_blank" class="contact-link">
+          <span>Resume</span>
+          <span class="contact-link-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="reveal" style="padding-top: 5rem;">
+      <p style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; color: var(--ink-4); text-transform: uppercase; margin-bottom: 1rem;">Based in</p>
+      <p style="font-family: var(--font-display); font-size: 28px; color: var(--ink); line-height: 1.3;">Dover, Delaware<br><span style="color: var(--ink-4); font-style: italic;">Delaware State University</span></p>
+      <p style="margin-top: 2rem; font-size: 13px; color: var(--ink-4); line-height: 1.7;">Phone: (302) 354-0572</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Ayomosiah Odumosu</span>
+  <span class="footer-note">DSU CS '29</span>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Hero stats animate in on load
+  document.querySelectorAll('.hero-stat').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), 300 + i * 150);
+  });
+</script>
+</body>
+</html>
